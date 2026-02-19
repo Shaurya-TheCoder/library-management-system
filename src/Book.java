@@ -41,8 +41,13 @@ public class Book {
         isIssued = true;
         return true;
     }
-    public void returnBook() {
-        isIssued = false;
+    public boolean returnBook() {
+        if(isIssued) {
+            isIssued = false;
+            return true;
+        }
+        return false;
+
     }
 
     public String toString(){

@@ -38,9 +38,16 @@ public class Library {
         else
             System.out.println("Book issued successfully!");
     }
-    public void returnBook(Book book){
-        book.returnBook();
-        System.out.println("Book has been Returned!");
+    public void returnBook(String bookId){
+        Book bookFound = findBook(bookId);
+        if(bookFound != null) {
+            if(bookFound.returnBook())
+                System.out.println("Book has been Returned!");
+            else
+                System.out.println("Book hasn't been issued yet!");
+        }else{
+            System.out.println("Book Not Found!");
+        }
     }
     public void displayBooks(){
         for(Book b : books){
