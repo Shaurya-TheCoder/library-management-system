@@ -29,7 +29,7 @@ public class Main {
                     String author = scan.nextLine();
 
                     Book newBook = new Book(id, name, author);
-                    lib.addBook(newBook);
+                    lib.addBook(id, newBook);
                     System.out.println("Book Added Successfully!");
                     break;
                 case 2:

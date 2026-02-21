@@ -1,26 +1,23 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Library {
-    private ArrayList<Book> books;
+    private HashMap<String, Book> books;
 
     private Book findBook(String bookId){
-        for(Book b : books){
-            if(b.getBookId().equals(bookId))
-                return b;
-        }
-        return null;
+            return books.get(bookId);
     }
 
     public Library(){
-        books = new ArrayList<>();
+        books = new HashMap<>();
     }
-    public void addBook(Book book){
-        books.add(book);
+    public void addBook(String bookId, Book book){
+        books.put(bookId, book);
     }
     public void removeBook(String bookId){
         Book book = findBook(bookId);
         if(book != null){
-            books.remove(book);
+            books.remove(bookId);
             System.out.println("Book Removed Successfully!");
             return;
         }else
@@ -50,7 +47,7 @@ public class Library {
         }
     }
     public void displayBooks(){
-        for(Book b : books){
+        for(Book b : books.values()){
             System.out.println(books);
         }
     }

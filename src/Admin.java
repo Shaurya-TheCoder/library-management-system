@@ -1,5 +1,8 @@
 class Admin extends User{
 
+    Admin(String name, String userId){
+        super(name, userId);
+    }
     @Override
     public void showMenu() {
         System.out.println("1. Add Book");
