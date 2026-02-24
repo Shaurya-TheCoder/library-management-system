@@ -24,14 +24,14 @@ public class Library {
             System.out.println("Book Not Found!");
     }
 
-    public void issueBook(String bookId){
+    public void issueBook(String bookId, String userId){
         Book book = findBook(bookId);
         if(book == null){
             System.out.println("Book not found!");
             return;
         }
-        else if(!book.issueBook())
-            System.out.println("Book has been issued to someone else, please wait until its back");
+        else if(!book.issueBook(userId))
+            System.out.println("Book has been issued to User: "+book.getIssuedToUserId()+" please wait until its back");
         else
             System.out.println("Book issued successfully!");
     }

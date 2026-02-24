@@ -9,4 +9,8 @@ abstract class User {
     }
 
     public abstract void showMenu();
+
+    public String getUserId(){
+        return userId;
+    }
 }

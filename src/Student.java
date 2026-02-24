@@ -8,5 +8,6 @@ class Student extends User{
         System.out.println("1. Issue Book");
         System.out.println("2. Return Book");
         System.out.println("3. View Books");
+        System.out.println("4. Exit");
     }
 }

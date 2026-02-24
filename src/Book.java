@@ -4,6 +4,7 @@ public class Book {
     private String title;
     private String author;
     private boolean isIssued;
+    private String issuedToUserId;
 
     Book(String id, String name, String author, boolean is_issued){ //constructor
         this.bookId = id;
@@ -34,20 +35,24 @@ public class Book {
     @return true if book can be issued, else return false;
      */
 
-    public boolean issueBook(){
+    public boolean issueBook(String userId){
         if(this.isIssued){
             return false;
         }
+        issuedToUserId = userId;
         isIssued = true;
         return true;
     }
     public boolean returnBook() {
         if(isIssued) {
             isIssued = false;
+            issuedToUserId = null;
             return true;
         }
         return false;
-
+    }
+    public String getIssuedToUserId(){
+        return issuedToUserId;
     }
 
     public String toString(){
